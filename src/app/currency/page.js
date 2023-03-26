@@ -12,7 +12,6 @@ export default function Page() {
         }
         console.log(form);
         event.preventDefault();
-        //setValidated(true);
       };
 
     return (
