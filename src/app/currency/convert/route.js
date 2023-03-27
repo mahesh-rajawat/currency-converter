@@ -20,6 +20,7 @@ export async function POST(req) {
 				'apikey': process.env.DATA_API_KEY,
 				},
 			}) : cachedData;
+			
 			// Server response from cache if same request exists.
 			if (cachedData !== null) {
 				const resultWithFormatPrice = cachedData.status == 200 ?
@@ -35,6 +36,7 @@ export async function POST(req) {
 					},
 				);
 			}
+
 			// Serve response from server anc cache the response
 			if (res.status == 200) {
 				const responseData = await res.json();
@@ -70,6 +72,7 @@ export async function POST(req) {
 					},
 				);
 			}
+
 		} catch (error) {
 			return NextResponse.json({ errors: 'Api unable to fetch'});
 		}
